@@ -20,9 +20,9 @@ class Register extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      return { errors: nextProps.errors };
     }
   }
 
