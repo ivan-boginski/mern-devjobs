@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
   const selectOptions = options.map((option) => (
-    <options key={option.label} value={option.value}>
+    <option key={option.label} value={option.value}>
       {option.label}
-    </options>
+    </option>
   ));
   return (
     <div className="form-group">
@@ -21,7 +21,7 @@ const SelectListGroup = ({ name, value, error, info, onChange, options }) => {
         {selectOptions}
       </select>
       {info && <small className="form-text text-muted">{info}</small>}
-      {error && <div className="text-danger">{error}</div>}
+      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };
